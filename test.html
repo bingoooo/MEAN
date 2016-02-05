@@ -1,0 +1,25 @@
+<!-- index.html -->
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MEAN - Tuto Buggué</title>
+  </head>
+  <body  ng-app="simplonApp">
+    <h2>Todo</h2>
+    <div ng-controller="SimplonController">
+      <span>Il reste {{ remaining() }} tâche(s) sur un total de {{ tasks.length }} </span>
+
+      <ul>
+        <li ng-repeat="task in tasks">
+          <input type="checkbox" ng-model="task.done" checked>
+          <span class="done-{{ task.isDone }}">{{ task.text }}</span>
+        </li>
+      </ul>
+
+    </div>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <!--script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script-->
+    <script src="js/controller.js"></script>
+  </body>
+</html>

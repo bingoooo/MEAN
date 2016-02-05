@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To Do List</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body ng-app="simplonApp">
+	<h2>To Do</h2>
+	<div ng-controller="SimplonController">
+		<span>Il reste {{ remain }} tâches sur un total de {{ tasks.length }}</span>
+
+		<ul>
+			<li ng-repeat="task in tasks">
+				<input type="checkbox" ng-model="task.done" ng-click="update()">
+				<span class="done-{{task.isDone}}">{{task.text}}</span>
+			</li>
+		</ul>
+
+	</div>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
